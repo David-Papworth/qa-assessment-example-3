@@ -11,7 +11,17 @@
 # one(['tic', 'tac', 'toe']) → {'tic':1, 'tac':1, 'toe':1}
     
 def one(items):
-    pass
+    uni=set(items)
+    items_dic = {}
+    for thing in uni:
+        num = 0
+        for item in items:
+            if thing == item:
+                num +=1
+        items_dic.update({thing:num})
+    return items_dic
+        
+
 
 # <QUESTION 2>
 
@@ -28,6 +38,14 @@ def one(items):
 # two(-5, 2, '/') → -2.5
 
 def two(a, b, operator):
+    if operator == '+':
+       return a + b
+    if operator == '-':
+       return a - b
+    if operator == '/':
+       return a / b
+    if operator == '*':
+       return a * b 
     pass
 
 # <QUESTION 3>
@@ -48,8 +66,12 @@ def two(a, b, operator):
 # We can use `x ** 0.5` to get the square root of `x`
 
 def three(num):
-    pass
+    square_root = num ** 0.5
+    result = int(square_root)
+    square_result = result * result
+    return square_result 
 
+print(three(1))
 # <QUESTION 4>
 
 # Given two integers, return the greatest common factor of the two numbers
